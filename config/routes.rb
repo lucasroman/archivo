@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'record/index'
+
+  get 'office/index'
+
+  get 'person/index'
+
   get 'person/steps'
 
   get 'office/steps'
