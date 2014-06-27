@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+  get 'step/person'
+
+  get 'step/office'
+
+  get 'step/record'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -53,4 +60,9 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  resources :people
+  resources :offices
+  resources :records
+   
 end
