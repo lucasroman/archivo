@@ -1,4 +1,5 @@
 class OfficeController < ApplicationController
+
   def index
     @offices = Office.all.to_a
   end
@@ -12,9 +13,16 @@ class OfficeController < ApplicationController
   end
 
   def edit
+    @office = Office.find(params[:id])
   end
 
   def update
+    @office = Office.find(params[:id])
+
+    if @office.update(office_params)
+      redirect_to @office
+    else
+      render 'edit'
   end
 
   def delete
@@ -24,5 +32,5 @@ class OfficeController < ApplicationController
     def office_params
       params.require(:office).permite(:name))
     end
-    
+
 end
