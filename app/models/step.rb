@@ -1,7 +1,7 @@
 class Step < ActiveRecord::Base
 
-  belong_to :person
-  belong_to :office
-  belong_to :record
+  belongs_to :person
+  belongs_to :office
+  belongs_to :record
   
 end
