@@ -1,22 +1,16 @@
 Rails.application.routes.draw do
 
-  get 'record/index'
+  get 'records/index'
 
-  get 'office/index'
+  get 'offices/index'
 
-  get 'person/index'
-
-  get 'person/steps'
-
-  get 'office/steps'
-
-  get 'record/steps'
+  get 'people/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+   root 'offices#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
