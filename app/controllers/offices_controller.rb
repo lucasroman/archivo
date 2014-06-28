@@ -7,5 +7,9 @@ class OfficesController < ApplicationController
   def new
 
   end
-  
+
+  def create
+    render html: params[:office].inspect
+  end
+
 end
