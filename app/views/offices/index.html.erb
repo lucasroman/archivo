@@ -1,2 +1,14 @@
-<h1>Offices#index</h1>
-<p>Find me in app/views/offices/index.html.erb</p>
+<h1>Listing Offices</h1>
+<table>
+	<tr>
+   <th>Name</th> 
+  </tr>
+
+  <% @offices.each do |office| %>
+    <tr>
+      <td><%= office.name %></td>
+    </tr>
+  <% end %>
+</table><br>
+
+<%= button_to 'New Office', new_office_path %>
