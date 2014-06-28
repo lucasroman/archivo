@@ -9,7 +9,10 @@ class OfficesController < ApplicationController
   end
 
   def create
-    render html: params[:office].inspect
+    @office = Office.new(params[:office])
+
+    @office.save
+    redirect_to @office
   end
 
 end
