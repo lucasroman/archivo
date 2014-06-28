@@ -5,7 +5,7 @@ class OfficesController < ApplicationController
   end
 
   def new
-
+    @office = Office.new
   end
 
   def create
@@ -15,9 +15,13 @@ class OfficesController < ApplicationController
     redirect_to @office
   end
 
+  def show
+    @office = Office.find(params[:id])
+  end
+
   private
     def office_params
       params.require(:office).permit(:name)
     end
-    
+
 end
