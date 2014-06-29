@@ -1,2 +1,20 @@
-<h1>People#index</h1>
-<p>Find me in app/views/people/index.html.erb</p>
+<h1>Listing People</h1>
+<table>
+	<tr>
+   <th>Name</th>
+   <th>DNI</th>
+   <th colspan="3"></th>
+  </tr>
+
+  <% @people.each do |person| %>
+    <tr>
+      <td><%= person.name %></td>
+      <td><%= person.dni %></td>
+      <td><%= link_to 'Show', person_path(person) %></td>
+      <td><%= link_to 'Edit', edit_person_path(person) %></td>
+      <td><%= link_to 'Delete', person_path(person), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table><br>
+
+<%= link_to 'New Person', new_person_path %>
