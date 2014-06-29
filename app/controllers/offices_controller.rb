@@ -22,6 +22,20 @@ class OfficesController < ApplicationController
     @office = Office.find(params[:id])
   end
 
+  def edit
+    @office = Office.find(params[:id])
+  end
+
+  def update
+    @office = Office.find(params[:id])
+
+    if @office.update(office_params)
+      redirect_to @office
+    else
+      render 'edit'
+    end
+  end
+
   private
     def office_params
       params.require(:office).permit(:name)
