@@ -2,7 +2,7 @@
 <table>
 	<tr>
    <th>Name</th> 
-   <th colspan="2"></th>
+   <th colspan="3"></th>
   </tr>
 
   <% @offices.each do |office| %>
@@ -10,6 +10,7 @@
       <td><%= office.name %></td>
       <td><%= link_to 'Show', office_path(office) %></td>
       <td><%= link_to 'Edit', edit_office_path(office) %></td>
+      <td><%= link_to 'Delete', office_path(office), method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table><br>
