@@ -36,6 +36,13 @@ class OfficesController < ApplicationController
     end
   end
 
+  def destroy
+    @office = Office.find(params[:id])
+    @office.destroy
+
+    redirect_to offices_path
+  end
+
   private
     def office_params
       params.require(:office).permit(:name)
