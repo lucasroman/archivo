@@ -2,11 +2,14 @@
 <table>
 	<tr>
    <th>Name</th> 
+   <th colspan="2"></th>
   </tr>
 
   <% @offices.each do |office| %>
     <tr>
       <td><%= office.name %></td>
+      <td><%= link_to 'Show', office_path(office) %></td>
+      <td><%= link_to 'Edit', edit_office_path(office) %></td>
     </tr>
   <% end %>
 </table><br>
