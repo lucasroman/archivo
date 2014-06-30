@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'records/index'
+  get 'file_records/index'
 
   get 'offices/index'
 
@@ -63,6 +63,6 @@ Rails.application.routes.draw do
 
   resources :people
   resources :offices
-  resources :records
+  resources :file_records
 
 end
