@@ -2,6 +2,6 @@ class Step < ActiveRecord::Base
 
   belongs_to :person
   belongs_to :office
-  belongs_to :record
+  belongs_to :file_record
   
 end
