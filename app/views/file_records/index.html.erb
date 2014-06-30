@@ -1,0 +1,18 @@
+<h1>Listing File Records</h1>
+<table>
+	<tr>
+   <th>Title</th> 
+   <th colspan="3"></th>
+  </tr>
+
+  <% @file_records.each do |file_record| %>
+    <tr>
+      <td><%= file_record.title %></td>
+      <td><%= link_to 'Show', file_record_path(file_record) %></td>
+      <td><%= link_to 'Edit', edit_file_record_path(file_record) %></td>
+      <td><%= link_to 'Delete', file_record_path(file_record), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table><br>
+
+<%= link_to 'New File Record', new_file_record_path %>
