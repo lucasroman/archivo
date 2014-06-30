@@ -1,0 +1,11 @@
+<h1>Show Person</h1>
+
+<p>
+  <strong>Name: </strong>
+  <%= @person.name %><br>
+  <strong>DNI: </strong>
+  <%= @person.dni %>
+</p>
+
+<%= link_to 'Back', people_path %>
+<%= link_to 'Edit', edit_person_path(@person) %>
