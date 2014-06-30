@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140627135530) do
+ActiveRecord::Schema.define(version: 20140630195746) do
+
+  create_table "file_records", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "offices", force: true do |t|
     t.string   "name"
@@ -29,11 +34,15 @@ ActiveRecord::Schema.define(version: 20140627135530) do
   create_table "records", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "title"
   end
 
   create_table "steps", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "record_id"
+    t.integer  "office_id"
+    t.integer  "person_id"
   end
 
 end
