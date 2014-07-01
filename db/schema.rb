@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20140630195746) do
   create_table "file_records", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "title"
   end
 
   create_table "offices", force: true do |t|
