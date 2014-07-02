@@ -1,4 +1,5 @@
 class DropTable < ActiveRecord::Migration
+=begin
   def change
   	create_table :file_records do |t|
   		t.string :title
@@ -22,4 +23,5 @@ class DropTable < ActiveRecord::Migration
         SQL
       end
     end
+=end
 end
