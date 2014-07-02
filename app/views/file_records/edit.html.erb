@@ -1,0 +1,25 @@
+<h1>Editing file record</h1>
+
+<%= form_for :file_record, url: file_record_path(@file_record), method: :patch do |f| %>
+  <% if @file_record.errors.any? %>
+    <div id="error_explanation" %>
+      <h2><%= pluralize(@file_record.errors.count, "error") %> prohibited this file record from being saved:</h2>
+      <ul>
+        <% @file_record.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', file_records_path %>
