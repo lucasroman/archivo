@@ -1,17 +1,15 @@
 class FileRecordsController < ApplicationController
 
-  include file_records
-
 	def index
-    @file_records = File_record.all
+    @file_records = FileRecord.all
   end
 
   def new
-    @file_record = File_record.new
+    @file_record = FileRecord.new
   end
 
   def create
-    @file_record = File_record.new(record_params)
+    @file_record = FileRecord.new(record_params)
     @office = Office.where(name: 'Mesa de entrada').first!
     @step = Step.new
 
@@ -26,7 +24,7 @@ class FileRecordsController < ApplicationController
   end
 
   def show
-    @file_record = File_record.find(params[:id])
+    @file_record = FileRecord.find(params[:id])
   end
 
   private
