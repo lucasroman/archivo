@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140702190308) do
+ActiveRecord::Schema.define(version: 20140702205152) do
 
   create_table "file_records", force: true do |t|
     t.string   "title"
@@ -33,12 +33,11 @@ ActiveRecord::Schema.define(version: 20140702190308) do
   end
 
   create_table "steps", force: true do |t|
+    t.integer  "file_record_id"
+    t.integer  "person_id"
+    t.integer  "office_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "record_id"
-    t.integer  "office_id"
-    t.integer  "person_id"
-    t.integer  "file_record_id"
   end
 
 end
