@@ -9,7 +9,7 @@ class FileRecordsController < ApplicationController
   end
 
   def create
-    @file_record = FileRecord.new(record_params)
+    @file_record = FileRecord.new(file_record_params)
     @office = Office.where(name: 'Mesa de entrada').first!
     @step = Step.new
 
@@ -27,8 +27,29 @@ class FileRecordsController < ApplicationController
     @file_record = FileRecord.find(params[:id])
   end
 
+  def edit
+    @file_record = FileRecord.find(params[:id])
+  end
+
+  def update
+    @file_record = FileRecord.find(params[:id])
+
+    if @file_record.update(file_record_params)
+      redirect_to @file_record
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @file_record = FileRecord.find(params[:id])
+    @file_record.destroy
+
+    redirect_to file_records_path
+  end
+
   private
-    def record_params
+    def file_record_params
       params.require(:file_record).permit(:title)
     end
 
