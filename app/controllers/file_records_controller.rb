@@ -1,9 +1,6 @@
 class FileRecordsController < ApplicationController
 
-  def unloadable(file_records)
-        Dependencies.mark_for_unload file_records
-  end
-
+  include file_records
 
 	def index
     @file_records = File_record.all
