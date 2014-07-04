@@ -17,6 +17,16 @@
     <%= f.text_field :title %>
   </p>
 
+  <select name="offices">
+    <option selected>Move file to...</option>
+    <option> 
+      <% @file_record.steps.each do |step| %>
+       <%= step.office.name %><br>
+      <% end %>
+    </option>
+  </select>
+
+
   <p>
     <%= f.submit %>
   </p>
