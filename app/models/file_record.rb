@@ -11,7 +11,8 @@ class FileRecord < ActiveRecord::Base
   end
 
   def update_file_record
-    offices = Office.all
+    office = Office.last!
+    steps.create(office: @office)
   end
 
 end
