@@ -17,15 +17,18 @@
     <%= f.text_field :title %>
   </p>
 
+  <%= collection_select(:office, :office_id, Office.all, :id, :name) %>
+<!--
   <select name="offices">
     <option selected>Move file to...</option>
       <% Office.all.each do |office| %>
-    <option> 
+    <option value=<%= office.name %>> 
        <%= office.name %>
     </option>
       <% end %>
   </select>
-
+  <input type="submit" value="Submit">
+-->
 
   <p>
     <%= f.submit %>
