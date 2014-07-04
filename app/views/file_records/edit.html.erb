@@ -19,11 +19,11 @@
 
   <select name="offices">
     <option selected>Move file to...</option>
+      <% Office.all.each do |office| %>
     <option> 
-      <% @file_record.steps.each do |step| %>
-       <%= step.office.name %><br>
-      <% end %>
+       <%= office.name %><br>
     </option>
+      <% end %>
   </select>
 
 
