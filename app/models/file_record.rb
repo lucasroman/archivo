@@ -11,8 +11,8 @@ class FileRecord < ActiveRecord::Base
   end
 
   def update_file_record
-    office = Office.last!
-    steps.create(office: @office)
+    office = Office.last! # Referencia a la oficina seleccionada en edit
+    steps.create(office: office)
   end
 
 end
