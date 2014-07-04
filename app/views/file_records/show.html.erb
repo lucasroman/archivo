@@ -4,19 +4,8 @@
   <strong>Title: </strong>
   <%= @file_record.title %><br>
   <strong>In office: </strong>
-  <%= @file_record.steps.first.office.name %>
+  <%= @file_record.steps.size %>
 </p>
 
 <%= link_to 'Back', file_records_path %>
 <%= link_to 'Edit', edit_file_record_path(@file_record) %>
-<br><br>
-
-<select name="offices">
-  <option selected>---Choose Office---</option>
-  <option> 
-    <% @file_record.steps.each do |step| %>
-  	 <%= step.office.name %><br>
-    <% end %>
-  </option>
-</select>
-
