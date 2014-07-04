@@ -13,7 +13,7 @@
   <option selected>---Choose Office---</option>
   <option> 
     <% @file_record.steps.each do |step| %>
-  	 <%= step.office.name %>
+  	 <%= step.office.name %><br>
     <% end %>
   </option>
 </select>
