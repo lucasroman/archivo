@@ -11,7 +11,7 @@ class FileRecordsController < ApplicationController
   def create
 
     @file_record = FileRecord.new(file_record_params)
-    @office = Office.where(name: 'Mesa de entrada').first!
+    #@office = Office.where(name: 'Mesa de entrada').first!
 
     if @file_record.save
       #step = Step.new(file_record_id: @file_record.id, office: @office) #¿que hace acá?
