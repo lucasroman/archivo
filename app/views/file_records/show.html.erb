@@ -9,8 +9,12 @@
 <%= link_to 'Edit', edit_file_record_path(@file_record) %>
 <br><br>
 
-<% @file_record.steps.each do |step| %>
-  <strong>Office name: </strong>
-  <%= step.office.name %>
-<% end %>
-  
+<select name="offices">
+  <option selected>---Choose Office---</option>
+  <option> 
+    <% @file_record.steps.each do |step| %>
+  	 <%= step.office.name %>
+    <% end %>
+  </option>
+</select>
+
