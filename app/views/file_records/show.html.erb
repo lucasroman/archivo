@@ -2,7 +2,9 @@
 
 <p>
   <strong>Title: </strong>
-  <%= @file_record.title %>
+  <%= @file_record.title %><br>
+  <strong>In office: </strong>
+  <%= @file_record.steps.first.office.name %>
 </p>
 
 <%= link_to 'Back', file_records_path %>
