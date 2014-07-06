@@ -7,7 +7,7 @@ class Step < ActiveRecord::Base
       office = Office.create(name: 'Mesa de entrada')
     end
 
-    step = Step.new
+    step = Step.new(office: office)
     office.steps << step
   end
 
