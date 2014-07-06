@@ -1,11 +1,5 @@
 class Step < ActiveRecord::Base
 
-  belongs_to :person
-  belongs_to :office
-  belongs_to :file_record
-  
-  self.abstract_class = true
-  
   def self.start
   	office = Office.where(name: 'Mesa de entrada').first!
 
@@ -16,5 +10,11 @@ class Step < ActiveRecord::Base
     step = Step.new
     office.steps << step
   end
+  
+  belongs_to :person
+  belongs_to :office
+  belongs_to :file_record
+  
+
 
 end
