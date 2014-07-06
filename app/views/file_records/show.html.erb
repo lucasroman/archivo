@@ -3,15 +3,18 @@
 <p>
   <strong>Title: </strong>
   <%= @file_record.title %><br>
+
   <strong>In office: </strong>
-  <%= @file_record.steps %>
+  <%= @file_record.steps.first.office.name %>
 </p>
 
 <p>
 	<strong>History of steps:</strong><br>
+
 	<% @file_record.steps.each do |step| %>
     <%= step.office.name %><br>
   <% end %>
+  
 </p>
 
 <%= link_to 'Back', file_records_path %>
