@@ -63,6 +63,8 @@ Rails.application.routes.draw do
 
   resources :people
   resources :offices
-  resources :file_records
+  resources :file_records do
+    resources :steps
+  end
 
 end
