@@ -1,12 +1,7 @@
 class Step < ActiveRecord::Base
 
   def self.start
-  	office = Office.where(name: 'Mesa de entrada').first!
-
-    if office.name != 'Mesa de entrada'
-      office = Office.create(name: 'Mesa de entrada')
-    end
-
+    office = Office.find_or_create_by(name: 'Mesa de entrada')
     step = Step.new(office: office)
     office.steps << step
   end
@@ -15,6 +10,4 @@ class Step < ActiveRecord::Base
   belongs_to :office
   belongs_to :file_record
   
-
-
 end
