@@ -1,7 +1,6 @@
 class FileRecord < ActiveRecord::Base
 
-
-  def  create_step
+  def create_step
     office = Office.first!
     steps.create(office: office)
   end
