@@ -5,7 +5,7 @@
   <%= @file_record.title %><br>
 
   <strong>In office: </strong>
-  <%= @file_record.steps.last.office.name %>
+ 
 </p>
 
 <h1>Step</h1>
@@ -24,8 +24,7 @@
   <strong>History of steps:</strong><br>
 
   <% @file_record.steps.each do |step| %>
-    <%= step.office.name %><br>
-    
+    <%= Office.find(step[:office_id]) %> 
   <% end %>
 </p>
 
