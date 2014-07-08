@@ -23,8 +23,8 @@
 <p>
   <strong>History of steps:</strong><br>
 
-  <% Office.all.each do |office| %>
-    <%= @file_record.steps.first.office.name %> 
+  <% @file_record.steps.each do |step| %>
+    <%= [step].first.office %> 
   <% end %>
 </p>
 
