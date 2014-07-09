@@ -2,7 +2,7 @@ class FileRecord < ActiveRecord::Base
 
   def archivate
     step = Step.archivate
-    step.file_record_id = self.id
+    steps.create(office: step.office)
   end
 
   def create_step
@@ -11,7 +11,7 @@ class FileRecord < ActiveRecord::Base
   end
 
   def update_file_record
-    office = Office.last! # Referencia a la oficina seleccionada en edit
+    office = Office.last!
     steps.create(office: office)
   end
 
