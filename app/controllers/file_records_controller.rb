@@ -19,7 +19,6 @@ class FileRecordsController < ApplicationController
     end
   end
 
-
   def show
     @file_record = FileRecord.find(params[:id])
   end
