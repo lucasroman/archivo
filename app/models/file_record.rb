@@ -1,5 +1,10 @@
 class FileRecord < ActiveRecord::Base
 
+  def self.archivate
+    step.archivate
+    step.file_record_id = @file_record.id
+  end
+  
   def create_step
     office = Office.first!
     steps.create(office: office)
@@ -13,6 +18,7 @@ class FileRecord < ActiveRecord::Base
   def create
     step.start
   end
+
 
   has_many :steps
   after_create :create_step
