@@ -24,7 +24,9 @@
   <strong>History of steps:</strong><br>
 
   <% @file_record.steps.each do |step| %>
-    <%= [step].first.office %> 
+    <% if step.office_id != nil %>
+      <%= step.office.name %><br>
+    <% end %>
   <% end %>
 </p>
 
