@@ -2,7 +2,6 @@ class StepsController < ApplicationController
   
   def create
     @file_record = FileRecord.find(params[:file_record_id])
-    #binding.pry
     @file_record.steps.create(file_record_params)
 
     redirect_to file_record_path(params[:file_record_id])
