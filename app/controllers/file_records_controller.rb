@@ -8,21 +8,17 @@ class FileRecordsController < ApplicationController
     @file_record = FileRecord.new
   end
 
-  def create
 
+  def create
     @file_record = FileRecord.new(file_record_params)
-    #@office = Office.where(name: 'Mesa de entrada').first!
 
     if @file_record.save
-      #step = Step.new(file_record_id: @file_record.id, office: @office) #¿que hace acá?
-      #step.save
-      #@file_record.save_step
       redirect_to @file_record
     else
       'new'
     end
-
   end
+
 
   def show
     @file_record = FileRecord.find(params[:id])
