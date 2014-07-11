@@ -1,5 +1,5 @@
 class FileRecord < ActiveRecord::Base
-  
+
   has_many :steps, dependent: :destroy
   after_create :create_first_step
 
@@ -19,7 +19,7 @@ class FileRecord < ActiveRecord::Base
   end
 
   def archivate
-    Step.archivate
+    steps.build.archivate
   end
 
 end
