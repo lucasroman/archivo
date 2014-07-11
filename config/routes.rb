@@ -65,6 +65,7 @@ Rails.application.routes.draw do
   resources :offices
   resources :file_records do
     resources :steps
+    post 'archivate'
   end
 
 end
