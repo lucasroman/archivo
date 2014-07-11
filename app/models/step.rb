@@ -1,17 +1,21 @@
 class Step < ActiveRecord::Base
 
+  belongs_to :person
+  belongs_to :office
+  belongs_to :file_record
+  
   def self.start
     office = Office.find_or_create_by(name: 'Mesa de entrada')
     step = Step.new(office: office)
   end
 
-  def self.archivate
-  	office = Office.find_or_create_by(name: 'Archivo')
-    step = Step.new(office: office)
+  def first_step
+    self.office = Office.start_office
+    save 
   end
 
-  belongs_to :person
-  belongs_to :office
-  belongs_to :file_record
-  
+  def archivate
+    Office.archivate
+  end
+
 end
