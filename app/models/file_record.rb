@@ -1,13 +1,12 @@
 class FileRecord < ActiveRecord::Base
+  
+  has_many :steps, dependent: :destroy
+  after_create :create_first_step
 
-  def archivate
-    step = Step.archivate
-    steps.create(office: step.office)
-  end
-
-  def create_step
-    office = Office.first!
-    steps.create(office: office)
+  def create_first_step
+    #office = Office.first!
+    #steps.create(office: office)
+    steps.build.first_step
   end
 
   def update_file_record
@@ -19,7 +18,8 @@ class FileRecord < ActiveRecord::Base
     step.start
   end
 
-  has_many :steps, dependent: :destroy
-  after_create :create_step
+  def archivate
+    Step.archivate
+  end
 
 end
