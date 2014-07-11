@@ -8,7 +8,7 @@ class Office < ActiveRecord::Base
     Office.find_or_create_by(name: 'Mesa de entrada')
 	end
 
-	def archivate
+	def self.archivate
    	Office.find_or_create_by(name: 'Archivo')
 	end
 	
