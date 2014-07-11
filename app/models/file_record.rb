@@ -9,11 +9,6 @@ class FileRecord < ActiveRecord::Base
     steps.build.first_step
   end
 
-  def update_file_record
-    office = Office.last!
-    steps.create(office: office)
-  end
-
   def create
     step.start
   end
