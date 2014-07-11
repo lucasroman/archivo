@@ -44,6 +44,10 @@ class FileRecordsController < ApplicationController
     redirect_to file_records_path
   end
 
+  def archivate
+    @file_record.archivate
+  end
+
   private
     def file_record_params
       params.require(:file_record).permit(:title)
