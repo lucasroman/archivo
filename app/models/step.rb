@@ -16,7 +16,7 @@ class Step < ActiveRecord::Base
 
   def archivate
     #binding.pry
-    self.office = Office.all.archivate
+    self.office = Office.archivate
     save
   end
 
