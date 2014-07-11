@@ -15,7 +15,8 @@ class Step < ActiveRecord::Base
   end
 
   def archivate
-    Office.archivate
+    self.office = Office.archivate
+    save
   end
 
 end
