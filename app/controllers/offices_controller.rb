@@ -42,12 +42,7 @@ class OfficesController < ApplicationController
 
     redirect_to offices_path
   end
-=begin
-  def archivate
-    @office.archivate
-  end
-=end
-
+  
   private
     def office_params
       params.require(:office).permit(:name)
