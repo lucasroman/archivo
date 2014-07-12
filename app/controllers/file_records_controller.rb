@@ -45,8 +45,8 @@ class FileRecordsController < ApplicationController
   end
 
   def archivate
-    #binding.pry
     @file_record = FileRecord.find(params[:file_record_id]).archivate
+    redirect_to :back
   end
 
   private
