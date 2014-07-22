@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :people
   get 'file_records/index'
 
   get 'offices/index'
@@ -10,7 +11,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'offices#index'
+  root 'offices#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
