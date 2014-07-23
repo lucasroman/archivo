@@ -9,6 +9,6 @@ class Person < ActiveRecord::Base
 	validates :name, presence: true, length: { minimum: 3 }
 	validates :dni, presence: true, length: { minimum: 8 }
 
-	before_action :authenticate_person!
+	#before_action :authenticate_person!
 	
 end
